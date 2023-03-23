@@ -84,24 +84,9 @@ behaviors {
                 ;
         };
 
-        ft_a4_scrn_sht: ft_a4_scrn_sht {
-            label = "ft_a4_scrn_sht";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-             = <&macro_press &kp LSHFT &kp LCTRL>
-                , <&macro_tap &kp P>
-                , <&macro_release &kp LSHFT &kp LCTRL>
-                , <&macro_tap &kp TAB &kp TAB &kp TAB &kp DOWN &kp DOWN &kp TAB &kp TAB &kp RET>
-                , <&macro_wait_time 2200>
-                , <&macro_press &kp LSHFT &kp LGUI>
-                , <&macro_tap &kp S>
-                , <&macro_release &kp LSHFT &kp LGUI>
-                ;
-        };
+       
 
-
-    next_desktop: next_desktop {
+        next_desktop: next_desktop {
             label = "next_desktop";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -131,6 +116,8 @@ behaviors {
                 , <&macro_release &kp LALT &kp LCTRL>
                 ;
         };
+
+        // microsoft onenote past
         onenote_paste: onenote_paste {
             label = "onenote_paste";
             compatible = "zmk,behavior-macro";
@@ -152,6 +139,24 @@ behaviors {
                 , <&macro_tap &kp RET>
                 ;
         };
+
+        //fact application macro
+         ft_a4_scrn_sht: ft_a4_scrn_sht {
+            label = "ft_a4_scrn_sht";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+             = <&macro_press &kp LSHFT &kp LCTRL>
+                , <&macro_tap &kp P>
+                , <&macro_release &kp LSHFT &kp LCTRL>
+                , <&macro_tap &kp TAB &kp TAB &kp TAB &kp DOWN &kp DOWN &kp TAB &kp TAB &kp RET>
+                , <&macro_wait_time 2200>
+                , <&macro_press &kp LSHFT &kp LGUI>
+                , <&macro_tap &kp S>
+                , <&macro_release &kp LSHFT &kp LGUI>
+                ;
+        };
+
         ft_proc: ft_proc {
             label = "ft_proc";
             compatible = "zmk,behavior-macro";
@@ -198,7 +203,7 @@ behaviors {
                 , <&macro_tap &kp P>
                 , <&macro_release &kp LSHFT &kp LCTRL>;
         };
-        //WAREHOUSE QATTAN
+        //WAREHOUSE QATTAN - FACT PRINT DIALOG
         print_wq: print_wq {
             label = "print_wq";
             compatible = "zmk,behavior-macro";
@@ -207,7 +212,7 @@ behaviors {
                 = <&macro_tap &kp RET>                
                 , <&macro_tap &kp TAB &kp RIGHT &kp RET &kp LBKT &kp DOWN>;
         };
-        //WAREHOUSE FURNITURE
+        //WAREHOUSE FURNITURE - FACT PRINT DIALOG
          print_wf: print_wf {
             label = "print_wf";
             compatible = "zmk,behavior-macro";
@@ -216,7 +221,7 @@ behaviors {
                 = <&macro_tap &kp RET>                
                 , <&macro_tap &kp TAB &kp RIGHT &kp RET &kp LBKT>;
         };
-        //SHOP QATTAN
+        //SHOP QATTAN - FACT PRINT DIALOG
          print_sq: print_sq {
             label = "print_sq";
             compatible = "zmk,behavior-macro";
@@ -225,7 +230,7 @@ behaviors {
                 = <&macro_tap &kp RET>                 
                 , <&macro_tap &kp TAB &kp RIGHT &kp RET &kp KP_N0>;
         };
-        //SHOP FURNITURE
+        //SHOP FURNITURE - FACT PRINT DIALOG
          print_sf: print_sf {
             label = "print_sf";
             compatible = "zmk,behavior-macro";
@@ -417,13 +422,13 @@ behaviors {
         };
 
         MACRO {
-            // ------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------------------
 // |     | QT WH | FR WH |           |       |      | # |     |      |          |         | fact print |     |
 // |     | QT SH | FR SH |           |       |      | # |     |      |          |         |            |     |
 // |     |       |       | tri_close |       |      | # |     | HELD | ft_proc  | ft_edit |            |     |
 //                       |           |       |      | # |     |      |          |
 
-                        bindings = </
+                        bindings = <
     &trans  &print_wq  &print_wf  &trans         &trans  &trans           &trans  &trans  &trans    &trans    &ft_print  &trans 
     &trans  &print_sq  &print_sf  &trans         &trans  &trans           &trans  &trans  &trans    &trans    &trans     &trans 
     &trans  &trans     &trans     &ft_tri_close  &trans  &trans           &trans  &trans  &ft_proc  &ft_edit  &trans     &trans 
