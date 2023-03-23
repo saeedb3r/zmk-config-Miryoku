@@ -247,7 +247,7 @@ behaviors {
     keymap {
         compatible = "zmk,keymap";
 
-        colemak {
+        qwerty {
 // -----------------------------------------------------------------------------------------------------------------------------
 // |        |   Q    |   W    |     F     |     P     |     B     | # |     J     |    L     |    U    |    Y   |   '    |     |
 // | LAYERS | A/LGUI | R/LALT |  S/LCTRL  |  T/LSHFT  |     G     | # |     M     | N/LSHFT  | E/LCTRL | I/LALT | O/LGUI |     |
@@ -255,14 +255,14 @@ behaviors {
 //                            | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
 
             bindings = <
-&trans      &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I          &kp O         &kp P          &trans
-&mo LAYERS  &mt LGUI A  &mt LALT S  &mt LCTRL D    &mt LSHFT F    &kp G                &kp H          &mt LSHFT J   &mt LCTRL K    &mt LALT L    &mt LGUI SEMI  &trans
-&trans      &kp Z       &mt RALT X  &kp C          &kp V          &kp B                &kp N          &kp M         &kp CMMA       &mt RALT DOT  &kp FSLH       &trans
-                                    &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
+&trans      &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U           &kp I          &kp O         &kp P          &trans
+&mo LAYERS  &mt LGUI A  &mt LALT S  &mt LCTRL D    &mt LSHFT F    &kp G                &kp H          &mt LSHFT J     &mt LCTRL K    &mt LALT L    &mt LGUI SEMI  &trans
+&trans      &kp Z       &mt RALT X  &kp C          &kp V          &kp B                &kp N          &lt MACRO M     &kp CMMA       &mt RALT DOT  &kp FSLH       &trans
+                                    &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC    &lt FN DEL
             >;
         };
 
-        qwerty {
+         colemak {
 // -----------------------------------------------------------------------------------------------------------------------------
 // |        |   Q    |   W    |     E     |     R     |     T     | # |     Y     |     U    |    I    |    O   |   P    |     |
 // | LAYERS | A/LGUI | S/LALT |  D/LCTRL  |  F/LSHFT  |     G     | # |     H     | J/LSHFT  | K/LCTRR | L/LALT | ;/LGUI |     |
@@ -277,7 +277,7 @@ behaviors {
             >;
         };
 
-        gaming_colemak {
+        gaming_qwerty {
 // ----------------------------------------------------------------------------------------------------
 // |        |   Q   |   W   |   F   |   P   |   B   | # |   J   |   L   |   U   |   Y   |   '   |     |
 // | LAYERS |   A   |   R   |   S   |   T   |   G   | # |   M   |   N   |   E   |   I   |   O   |     |
@@ -292,7 +292,7 @@ behaviors {
             >;
         };
 
-        gaming_qwerty {
+        gaming_colemak {
 // ----------------------------------------------------------------------------------------------------
 // |        |   Q   |   W   |   E   |   R   |   T   | # |   Y   |   U   |   I   |   O   |   P   |     |
 // | LAYERS |   A   |   S   |   D   |   F   |   G   | # |   H   |   J   |   K   |   L   |   ;   |     |
@@ -417,24 +417,17 @@ behaviors {
         };
 
         MACRO {
-                        bindings = <
-// -----------------------------------------------------------------------------------------------------------------------------------------------
-// ___________________________________________________________________       ____________________________________________________________________
-// |       |qattan wareh|fur wareh|          |          |          ||       ||          |          |          |          | fact print |     BKSP   |
-    &trans   &print_wq   &print_wf     &trans     &trans     &trans               &trans    &trans     &trans      &trans     &ft_print     &trans 
-// ___________________________________________________________________       ____________________________________________________________________
-// ___________________________________________________________________       ____________________________________________________________________
-// |        |qattan shop| fur shop |          |          |          ||       ||          |          |          |          |          |          |
-    &trans   &print_sq   &print_sf     &trans     &trans     &trans               &trans    &trans     &trans      &trans     &trans     &trans 
-// ___________________________________________________________________       ____________________________________________________________________
-// ___________________________________________________________________       ____________________________________________________________________
-// |       |          |          |          |          |             ||     ||          |          |          |            |          |          |
-    &trans   &trans      &trans  &ft_tri_close &trans     &trans               &trans     &trans      &ft_proc    &ft_edit     &trans     &trans 
-// ___________________________________________________________________       ____________________________________________________________________
-//                                       _____________________________       _________________________________________
-//                                       |        |        |        ||       ||              |  SCREEN SHOOT|        |
-                                           &trans   &trans   &trans          &ft_a4_scrn_sht    &screen_sht     &trans
-//                                       _____________________________       _________________________________________
+            // ------------------------------------------------------------------------------------
+// |     | QT WH | FR WH |           |       |      | # |     |      |          |         | fact print |     |
+// |     | QT SH | FR SH |           |       |      | # |     |      |          |         |            |     |
+// |     |       |       | tri_close |       |      | # |     | HELD | ft_proc  | ft_edit |            |     |
+//                       |           |       |      | # |     |      |          |
+
+                        bindings = </
+    &trans  &print_wq  &print_wf  &trans         &trans  &trans           &trans  &trans  &trans    &trans    &ft_print  &trans 
+    &trans  &print_sq  &print_sf  &trans         &trans  &trans           &trans  &trans  &trans    &trans    &trans     &trans 
+    &trans  &trans     &trans     &ft_tri_close  &trans  &trans           &trans  &trans  &ft_proc  &ft_edit  &trans     &trans 
+                                  &trans         &trans  &trans           &trans  &trans  &trans                                
                                             	        
                         >;
                 };
