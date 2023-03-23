@@ -33,6 +33,215 @@
     quick-release;
 };
 
+/ {
+
+gqt: global-quick-tap {
+    compatible = "zmk,behavior-hold-tap";
+    label = "GLOBAL_QUICK_TAP";
+    #binding-cells = <2>;
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <125>;
+    global-quick-tap;
+    bindings = <&kp>, <&kp>;
+};
+
+behaviors {
+        bhm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+    macros {
+
+       
+        screen_sht: screen_sht {
+            label = "screen_sht";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT &kp LGUI>
+                , <&macro_tap &kp S>
+                , <&macro_release &kp LSHFT &kp LGUI>
+                ;
+        };
+       
+    move_win: move_win {
+            label = "move_win";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp SPACE>
+                , <&macro_release &kp LALT>
+                , <&macro_tap &kp M>
+                ;
+        };
+
+        ft_a4_scrn_sht: ft_a4_scrn_sht {
+            label = "ft_a4_scrn_sht";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+             = <&macro_press &kp LSHFT &kp LCTRL>
+                , <&macro_tap &kp P>
+                , <&macro_release &kp LSHFT &kp LCTRL>
+                , <&macro_tap &kp TAB &kp TAB &kp TAB &kp DOWN &kp DOWN &kp TAB &kp TAB &kp RET>
+                , <&macro_wait_time 2200>
+                , <&macro_press &kp LSHFT &kp LGUI>
+                , <&macro_tap &kp S>
+                , <&macro_release &kp LSHFT &kp LGUI>
+                ;
+        };
+
+
+    next_desktop: next_desktop {
+            label = "next_desktop";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI &kp LCTRL>
+                , <&macro_tap &kp RIGHT>
+                , <&macro_release &kp LGUI &kp LCTRL>
+                ;
+        };
+        prev_desktop: prev_desktop {
+            label = "prev_desktop";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI &kp LCTRL>
+                , <&macro_tap &kp LEFT>
+                , <&macro_release &kp LGUI &kp LCTRL>
+                ;
+        };
+        CTRL_ALT_DEL: CTRL_ALT_DEL {
+            label = "CTRL_ALT_DEL";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT &kp LCTRL>
+                , <&macro_tap &kp DEL>
+                , <&macro_release &kp LALT &kp LCTRL>
+                ;
+        };
+        onenote_paste: onenote_paste {
+            label = "onenote_paste";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_wait_time 300>
+                , <&macro_tap &kp V>
+                , <&macro_release &kp LCTRL>
+                , <&macro_wait_time 200>
+                , <&macro_tap &kp SPACE &kp TAB>
+                , <&macro_press &kp LGUI>
+                , <&macro_tap &kp V>
+                , <&macro_wait_time 500>
+                , <&macro_release &kp LGUI>
+                , <&macro_wait_time 200>
+                , <&macro_tap &kp DOWN>
+                //, <&macro_tap &kp DOWN>
+                , <&macro_tap &kp RET>
+                ;
+        };
+        ft_proc: ft_proc {
+            label = "ft_proc";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT &kp LCTRL>
+                , <&macro_tap &kp U>
+                , <&macro_release &kp LSHFT &kp LCTRL>
+                , <&macro_tap &kp RET>
+                ;
+        };
+        ft_edit: ft_edit_doc {
+            label = "ft_edit_doc";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings= <&macro_tap &kp F6 &kp RET>;
+        };
+        ft_tri_close: tri_close {
+            label = "ft_tri_close";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp F4>
+                , <&macro_release &kp LALT>
+                , <&macro_wait_time 350>
+                //, <&macro_press &kp LALT>
+                //, <&macro_tap &kp F4>
+                //, <&macro_release &kp LALT>
+                //, <&macro_wait_time 350>
+                //, <&macro_press &kp LALT>
+                //, <&macro_tap &kp F4>
+                //, <&macro_release &kp LALT>
+                , <&macro_tap &kp ESC &kp ESC &kp ESC>
+                ;
+        };
+        //FACT PRINT DIALOG
+        ft_print: ft_print {
+            label = "ft_print";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT &kp LCTRL>
+                , <&macro_tap &kp P>
+                , <&macro_release &kp LSHFT &kp LCTRL>;
+        };
+        //WAREHOUSE QATTAN
+        print_wq: print_wq {
+            label = "print_wq";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings 
+                = <&macro_tap &kp RET>                
+                , <&macro_tap &kp TAB &kp RIGHT &kp RET &kp LBKT &kp DOWN>;
+        };
+        //WAREHOUSE FURNITURE
+         print_wf: print_wf {
+            label = "print_wf";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp RET>                
+                , <&macro_tap &kp TAB &kp RIGHT &kp RET &kp LBKT>;
+        };
+        //SHOP QATTAN
+         print_sq: print_sq {
+            label = "print_sq";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp RET>                 
+                , <&macro_tap &kp TAB &kp RIGHT &kp RET &kp KP_N0>;
+        };
+        //SHOP FURNITURE
+         print_sf: print_sf {
+            label = "print_sf";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = //<&macro_press &kp LSHFT &kp LCTRL>
+                //, <&macro_tap &kp P>
+                //, <&macro_release &kp LSHFT &kp LCTRL>
+                //, <&macro_wait_time 1500>
+                 <&macro_tap &kp RET>
+                //, <&macro_wait_time 200>
+                , <&macro_tap &kp TAB &kp RIGHT &kp RET &kp BSLH>;
+        };
+    };
+};
+
 // Keymap configuration (Colemak-DHm)
 / {
     keymap {
