@@ -16,7 +16,7 @@
 #define NUM 8
 #define SYM 9
 #define FN 10
-#define MACRO 10
+#define MACRO 11
 
 // Behavior configuration
 &mt {
