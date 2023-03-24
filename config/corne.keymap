@@ -322,10 +322,10 @@ behaviors {
 //                    |     |     |     | # |     |     |         |
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans       &trans              &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &to COLEMAK  &to GAMING_COLEMAK  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &to QWERTY   &to GAMING_QWERTY   &trans  &trans
-                        &trans  &trans  &trans        &trans  &trans  &trans
+&bootloader  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans       &trans              &trans  &bootloader
+&reset       &trans  &trans  &trans  &trans  &trans        &trans  &trans  &to COLEMAK  &to GAMING_COLEMAK  &trans  &reset
+&trans       &trans  &trans  &trans  &trans  &trans        &trans  &trans  &to QWERTY   &to GAMING_QWERTY   &trans  &trans
+                             &trans  &trans  &trans        &trans  &trans  &trans
             >;
         };
 
@@ -371,8 +371,8 @@ behaviors {
 //                     | HELD  |       |      | # | STOP     | PLAY   | MUTE   |
 
             bindings = <
-&trans  &trans    &trans    &trans     &trans     &bootloader        &bootloader   &ext_power EP_OFF  &cp C_BRI_DN  &cp C_BRI_UP  &ext_power EP_ON  &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &reset             &reset        &cp C_PREV         &cp C_VOL_DN  &cp C_VOL_UP  &cp C_NEXT        &trans
+&trans  &trans    &trans    &trans     &trans     &trans             &trans        &ext_power EP_OFF  &cp C_BRI_DN  &cp C_BRI_UP  &ext_power EP_ON  &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans             &trans        &cp C_PREV         &cp C_VOL_DN  &cp C_VOL_UP  &cp C_NEXT        &trans
 &trans  &trans    &kp RALT  &trans     &trans     &trans             &out OUT_BLE  &bt BT_SEL 0       &bt BT_PRV    &bt BT_NXT    &bt BT_CLR        &trans
                             &trans     &trans     &trans             &cp C_STOP    &cp C_PLAY         &cp C_MUTE
             >;
