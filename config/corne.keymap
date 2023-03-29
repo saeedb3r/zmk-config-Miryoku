@@ -316,32 +316,32 @@ behaviors {
 
         layers {
 // ---------------------------------------------------------------------------------------------
-// |      |     |     |     |     |     | # |     |     |         |                |     |     |
-// | HELD |     |     |     |     |     | # |     |     | COLEMAK | GAMING_COLEMAK |     |     |
-// |      |     |     |     |     |     | # |     |     | QWERTY  | GAMING_QWERTY  |     |     |
-//                    |     |     |     | # |     |     |         |
+// | bootloader | bootloader |     |     |     | HELD | # |     |     |         |                | bootloader | bootloader |
+// |    HELD    |            |     |     |     |      | # |     |     | COLEMAK | GAMING_COLEMAK |            |            |
+// |            |            |     |     |     |      | # |     |     | QWERTY  | GAMING_QWERTY  |            |            |
+//                                 |     |     |      | # |     |     |         |
 
             bindings = <
-&bootloader  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans       &trans              &trans  &bootloader
-&reset       &trans  &trans  &trans  &trans  &trans        &trans  &trans  &to COLEMAK  &to GAMING_COLEMAK  &trans  &reset
-&trans       &trans  &trans  &trans  &trans  &trans        &trans  &trans  &to QWERTY   &to GAMING_QWERTY   &trans  &trans
-                             &trans  &trans  &trans        &trans  &trans  &trans
+&bootloader  &bootloader  &trans  &trans  &trans  &trans          &trans  &trans  &trans       &trans              &bootloader  &bootloader
+&reset       &trans       &trans  &trans  &trans  &trans          &trans  &trans  &to COLEMAK  &to GAMING_COLEMAK  &trans       &reset
+&trans       &trans       &trans  &trans  &trans  &trans          &trans  &trans  &to QWERTY   &to GAMING_QWERTY   &trans       &trans
+                                  &trans  &trans  &trans          &trans  &trans  &trans
             >;
         };
 
 
         navigation {
 // -------------------------------------------------------------------------------------------
-// |     |      |      |       |       |     | # | REDO  | CUT  | COPY | PASTE | UNDO  |     |
-// |     | LGUI | LALT | LCTRL | LSHFT |     | # | CAPS  | LEFT | DOWN | UP    | RIGHT |     |
-// |     |      | RALT |       |       |     | # | INS   | HOME | PGDN | PGUP  | END   |     |
-//                     |       | HELD  |     | # | ENTER | BSPC | DEL  |
+// |     |      | move_win |       |       |     | # | REDO  | CUT  | COPY | PASTE | UNDO  |     |
+// |     | LGUI |   LALT   | LCTRL | LSHFT |     | # | CAPS  | LEFT | DOWN | UP    | RIGHT |     |
+// |     |      |   RALT   |       |       |     | # | INS   | HOME | PGDN | PGUP  | END   |     |
+//                         |       | HELD  |     | # | ENTER | BSPC | DEL  |
 
             bindings = <
-&trans  &trans    &trans    &trans     &trans     &trans        &kp K_REDO    &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_UNDO  &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &kp CAPSLOCK  &kp LEFT   &kp DOWN    &kp UP       &kp RIGHT   &trans
-&trans  &trans    &kp RALT  &trans     &trans     &trans        &kp INS       &kp HOME   &kp PG_DN   &kp PG_UP    &kp END     &trans
-                            &trans     &trans     &trans        &kp ENTER     &kp BSPC   &kp DEL
+&trans  &trans    &move_win  &trans     &trans     &trans        &kp K_REDO    &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_UNDO  &trans
+&trans  &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  &trans        &kp CAPSLOCK  &kp LEFT   &kp DOWN    &kp UP       &kp RIGHT   &trans
+&trans  &trans    &kp RALT   &trans     &trans     &trans        &kp INS       &kp HOME   &kp PG_DN   &kp PG_UP    &kp END     &trans
+                             &trans     &trans     &trans        &kp ENTER     &kp BSPC   &kp DEL
             >;
         };
 
@@ -412,13 +412,13 @@ behaviors {
 // ------------------------------------------------------------------------------------------
 // |     |  F12 |  F7  |  F8  |  F9   | PSCRN | # |     |       |       |      |      |     |
 // |     |  F11 |  F4  |  F5  |  F6   | SLCK  | # |     | LSHFT | LCTRL | LALT | LGUI |     |
-// |     |  F10 |  F1  |  F2  |  F3   | PAUSE | # |     |       |       | RALT |      |     |
+// |     |  F10 |  F1  |  F2  |  F3   | PAUSE | # |     |       |   X   | RALT |      |     |
 //                     | ESC  | SPACE |  TAB  | # |     |       | HELD  |
 
             bindings = <
 &trans  &kp F12  &kp F7  &kp F8   &kp F9     &kp PSCRN              &trans  &trans     &trans     &trans    &trans    &trans
 &trans  &kp F11  &kp F4  &kp F5   &kp F6     &kp SLCK               &trans  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
-&trans  &kp F10  &kp F1  &kp F2   &kp F3     &kp PAUSE_BREAK        &trans  &trans     &trans     &kp RALT  &trans    &trans
+&trans  &kp F10  &kp F1  &kp F2   &kp F3     &kp PAUSE_BREAK        &trans  &kp X      &trans     &kp RALT  &trans    &trans
                          &kp ESC  &kp SPACE  &kp TAB                &trans  &trans     &trans
             >;
         };
