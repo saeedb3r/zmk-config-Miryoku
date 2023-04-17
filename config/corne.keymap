@@ -234,5 +234,51 @@
                                     &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC    &lt FN DEL
             >;
         };
+         colemak {
+// -----------------------------------------------------------------------------------------------------------------------------
+// |        |   Q    |   W    |     F     |     P     |     B     | # |     J     |    L     |    U    |    Y   |   '    |     |
+// | LAYERS | A/LGUI | R/LALT |  S/LCTRL  |  T/LSHFT  |     G     | # |     M     | N/LSHFT  | E/LCTRL | I/LALT | O/LGUI |     |
+// |        |   Z    | X/RALT |     C     |     D     |     V     | # |     K     |    H     |    ,    | ./RALT |   /    |     |
+//                            | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
+
+
+            bindings = <
+&trans      &kp Q       &kp W       &kp F          &kp P          &lt LAYERS B         &kp J          &kp L         &kp U          &kp Y         &kp SQT     &trans
+&mo LAYERS  &mt LGUI A  &mt LALT R  &mt LCTRL S    &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &mt LCTRL E    &mt LALT I    &mt LGUI O  &trans
+&trans      &kp Z       &mt RALT X  &kp C          &kp D          &kp V                &kp K          &kp H         &kp CMMA       &mt RALT DOT  &kp FSLH    &trans
+                                    &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
+            >;
+        };
+
+        gaming_qwerty {
+// ----------------------------------------------------------------------------------------------------
+// |        |   Q   |   W   |   E   |   R   |   T   | # |   Y   |   U   |   I   |   O   |   P   |     |
+// | LAYERS |   A   |   S   |   D   |   F   |   G   | # |   H   |   J   |   K   |   L   |   ;   |     |
+// |        |   Z   |   X   |   C   |   V   |   B   | # |   N   |   M   |   ,   |   .   |   /   |     |
+//                          |  ESC  | SPACE |  TAB  | # | ENTER | BSPC  |  DEL  |
+
+            bindings = <
+&trans      &kp Q  &kp W  &kp E    &kp R      &lt LAYERS T   &kp Y      &kp U     &kp I     &kp O    &kp P     &trans
+&mo LAYERS  &kp A  &kp S  &kp D    &kp F      &kp G          &kp H      &kp J     &kp K     &kp L    &kp SEMI  &trans
+&trans      &kp Z  &kp X  &kp C    &kp V      &kp B          &kp N      &kp M     &kp CMMA  &kp DOT  &kp FSLH  &trans
+                          &kp ESC  &kp SPACE  &kp TAB        &kp ENTER  &kp BSPC  &kp DEL
+            >;
+        };
+
+        gaming_colemak {
+// ----------------------------------------------------------------------------------------------------
+// |        |   Q   |   W   |   F   |   P   |   B   | # |   J   |   L   |   U   |   Y   |   '   |     |
+// | LAYERS |   A   |   R   |   S   |   T   |   G   | # |   M   |   N   |   E   |   I   |   O   |     |
+// |        |   Z   |   X   |   C   |   D   |   V   | # |   K   |   H   |   ,   |   .   |   /   |     |
+//                          |  ESC  | SPACE |  TAB  | # | ENTER | BSPC  |  DEL  |
+
+            bindings = <
+&trans      &kp Q  &kp W  &kp K    &kp S      &lt LAYERS F   &kp O      &kp I     &kp L     &kp SEMI  &kp R     &trans
+&mo LAYERS  &kp A  &kp D  &kp V    &kp E      &kp G          &kp M      &kp Y     &kp N     &kp U     &kp SQT   &trans
+&trans      &kp Z  &kp X  &kp C    &kp B      &kp T          &kp J      &kp H     &kp CMMA  &kp DOT   &kp FSLH  &trans
+                          &kp ESC  &kp SPACE  &kp TAB        &kp ENTER  &kp BSPC  &kp DEL
+            >;
+        };
+
     };
 };
