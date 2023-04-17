@@ -347,7 +347,6 @@ behaviors {
 
 // TODO
 // Add mouse keys when implemented in ZMK
-// hold space for photoshop paning 
 
         mouse {
 // ------------------------------------------------------------------------------------
